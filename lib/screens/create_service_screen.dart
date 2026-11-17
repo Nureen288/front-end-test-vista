@@ -7,7 +7,9 @@ import '../utils/validators.dart';
 import '../widgets/content_width.dart';
 
 class CreateServiceScreen extends StatefulWidget {
-  const CreateServiceScreen({super.key});
+  final int? initialCompanyId;
+
+  const CreateServiceScreen({super.key, this.initialCompanyId});
 
   @override
   State<CreateServiceScreen> createState() => _CreateServiceScreenState();
@@ -22,6 +24,11 @@ class _CreateServiceScreenState extends State<CreateServiceScreen> {
   bool _saving = false;
 
   @override
+    void initState() {
+    super.initState();
+    _companyId = widget.initialCompanyId;
+  }
+  
   void dispose() {
     _nameController.dispose();
     _descriptionController.dispose();

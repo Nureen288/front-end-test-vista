@@ -21,8 +21,10 @@ class VistaApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Vista Test',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorSchemeSeed: Colors.indigo,
+        colorSchemeSeed: const Color(0xFF2F5D8A),
+        scaffoldBackgroundColor: const Color(0xFFF5F6FA),
         useMaterial3: true,
       ),
       home: const CompanyListScreen(),
